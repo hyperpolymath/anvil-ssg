@@ -9,6 +9,8 @@
        (permissions . "read-all")))
     (patterns
       ((code-review . "thorough")
-       (refactoring . "conservative")))
+       (refactoring . "conservative")
+       (testing . "comprehensive")))
     (constraints
-      ((banned . ("typescript" "go" "python" "makefile"))))))
+      ((languages . ("ada" "spark" "scheme" "bash" "asciidoc"))
+       (banned . ("typescript" "go" "python" "makefile" "javascript"))))))

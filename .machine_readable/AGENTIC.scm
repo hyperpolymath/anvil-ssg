@@ -12,5 +12,5 @@
        (refactoring . "conservative")
        (testing . "comprehensive")))
     (constraints
-      ((languages . ())
-       (banned . ("typescript" "go" "python" "makefile"))))))
+      ((languages . ("ada" "spark" "scheme" "bash" "asciidoc"))
+       (banned . ("typescript" "go" "python" "makefile" "javascript"))))))

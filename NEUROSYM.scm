@@ -5,8 +5,14 @@
   `((version . "1.0.0")
     (symbolic-layer
       ((type . "scheme")
-       (reasoning . "deductive")))
+       (reasoning . "deductive")
+       (verification . "formal")
+       (contracts . "spark-annotations")))
     (neural-layer
       ((embeddings . false)
-       (fine-tuning . false)))
-    (integration . ())))
+       (fine-tuning . false)
+       (assistance . "code-generation")))
+    (integration
+      (("ai-assisted-proofs" . "suggest proof strategies for GNATprove")
+       ("contract-generation" . "infer preconditions/postconditions from usage")
+       ("documentation" . "generate AsciiDoc from code comments")))))
