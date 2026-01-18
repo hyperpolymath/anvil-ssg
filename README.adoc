@@ -57,8 +57,37 @@ just build
 * **SPARK Prover**
 * **Just** (Orchestrator)
 
+== Architecture
+
+anvil-ssg provides two complementary implementations:
+
+[cols="1,3"]
+|===
+|Mode |Description
+
+|**SPARK Core** (`src/spark/`)
+|Formally-verified core with contracts, preconditions, and GNATprove integration
+
+|**Standard Mode** (`src/standard/`)
+|Feature-complete implementation with full markdown parsing, templating, and rendering (merged from noteg-ssg)
+|===
+
+[source]
+----
+engine/src/
+├── spark/           # SPARK-verified core
+│   ├── anvil_engine.ads    # Contracts & preconditions
+│   └── anvil_engine.adb    # Proven implementation
+└── standard/        # Full-featured (non-SPARK)
+    ├── anvil_standard.ads  # Complete API
+    └── anvil_standard.adb  # Markdown, templates, rendering
+----
+
 == Part of poly-ssg
 `anvil-ssg` is the high-integrity safety member of the **poly-ssg** family.
+
+== Merged from noteg-ssg
+The standard mode implementation was merged from https://github.com/hyperpolymath/noteg-ssg[noteg-ssg] to consolidate Ada SSG efforts into a single, well-maintained repository with both SPARK verification and full functionality.
 
 == License
 PMPL-1.0-or-later
